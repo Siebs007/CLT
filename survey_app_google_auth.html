@@ -322,7 +322,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>Daily Survey</h1>
+            <h1>Weekly Survey</h1>
             <p>Cognitive Load Research</p>
         </div>
 
@@ -345,8 +345,8 @@
                 <button class="btn" id="continue-btn" onclick="validateParticipant()">Continue to Survey</button>
             </div>
 
-            <!-- Daily Survey Screen -->
-            <div class="screen" id="daily-survey">
+            <!-- Weekly Survey Screen -->
+            <div class="screen" id="weekly-survey">
                 <div class="progress-bar">
                     <div class="progress-fill" style="width: 50%"></div>
                 </div>
@@ -544,7 +544,7 @@
                         };
                         
                         displayParticipantInfo();
-                        showScreen('daily-survey');
+                        showScreen('weekly-survey');
                         showSuccess('ID validated successfully!');
                         
                     } else {
@@ -688,7 +688,7 @@
             // Update progress bar
             const progressMap = {
                 'id-entry-screen': '25%',
-                'daily-survey': '50%',
+                'weekly-survey': '50%',
                 'completion-screen': '100%'
             };
             const progressBar = document.querySelector('.progress-fill');
