@@ -501,7 +501,7 @@
         let currentParticipant = null;
 
         // REPLACE WITH REAL API ENDPOINT
-        const API_URL = 'https://script.google.com/macros/s/AKfycbw82jVFZcdbM839Cxj3zE5JDagA3CsCwjau3h4xmw3qebEUA7-QleTuzyh4He4HCQx8/exec';
+        const API_URL = 'https://script.google.com/macros/s/AKfycbw1em_rK1v-3OQpwIxO3xjbLQL5NAxzFxin1bwdON17Upuyeu3dbxLeKwjAQrR1NoEa/exec';
 
         async function validateParticipant() {
             const idCode = document.getElementById('participant-id').value.trim().toUpperCase();
@@ -786,6 +786,16 @@
                 document.getElementById('demanding-activity-label').textContent = activityLabels[selectedValue];
             }
         });
+
+        function addCorsHeaders(output) {
+            if (output && typeof output.setHeader === 'function') {
+                output.setHeader("Access-Control-Allow-Origin", "*");
+                output.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+                output.setHeader("Access-Control-Allow-Headers", "Content-Type");
+            } else {
+                console.error('addCorsHeaders: output is not a valid TextOutput or HtmlOutput object', output);
+            }
+        }
     </script>
 </body>
 </html>
